@@ -30,10 +30,14 @@ public class StreamMain {
 
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify(" Zwykly tekst ", () -> System.out.print("<3")); //żeby było z przodu i z tyłu to umiem tylko dwa razy wpisać metodę decorate w PoemBeautifier :/
-        poemBeautifier.beautify("Zwykly tekst".toUpperCase(), () -> System.out.print(""));
-        poemBeautifier.beautify("Zwykly text".toLowerCase(), () -> System.out.print(""));
-        poemBeautifier.beautify("Zwykly tekst", () -> System.out.print("wcale nie taki zwykly->"));
+        poemBeautifier.beautify(" Zwykly tekst ", txt -> txt.toUpperCase());
+        poemBeautifier.beautify("Zwykly tekst", txt -> "<3 " + txt + " <3" );
+        poemBeautifier.beautify("Zwykly tekst", txt -> txt.toLowerCase());
+        poemBeautifier.beautify("Zwykly tekst", txt -> txt + " " + txt);
+        poemBeautifier.beautify("Zwykly tekst", txt -> txt.toUpperCase() + " " + txt.toLowerCase());
+        poemBeautifier.beautify("Zwykly tekst", txt -> "grrr i znowu " + txt + " @@##@@#!!!");
+
+
         /*
         System.out.println("Using Stream to generate even numbers from 1 to 20");
         NumbersGenerator.generateEven(20);*/
